@@ -1,0 +1,56 @@
+﻿@model Product238.Models.Product
+
+@{
+    ViewBag.Title = "DeleteProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa Sản Phẩm</h2>
+
+<h3>Bạn có muốn xóa sản phẩm này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgCover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgCover)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "ListProducts")
+        </div>
+    }
+</div>

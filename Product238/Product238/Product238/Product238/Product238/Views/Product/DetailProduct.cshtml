@@ -1,0 +1,51 @@
+﻿@model Product238.Models.Product
+
+@{
+    ViewBag.Title = "DetailProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetailProduct</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgCover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgCover)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "EditProduct", new { id = Model.Id }) |
+    @Html.ActionLink("Trở về", "ListProducts")
+</p>

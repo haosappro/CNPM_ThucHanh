@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Product238.Models.Product>
+
+@{
+    ViewBag.Title = "ListProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách các sản phẩm</h2>
+@Html.ActionLink("Tạo sản phẩm", "CreateProduct")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImgCover)
+        </th>
+        <th width="60" style="text-align: center">Edit</th>
+        <th width="60" style="text-align: center">Detail</th>
+        <th width="60" style="text-align: center">Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PPrice)
+            </td>
+            <td>
+                <img src="@item.ImgCover" width="95" title="" />
+            </td>
+            <td style="text-align: center">
+                <a href="/Product/EditProduct/@item.Id" title="Edit Product">Edit</a>
+            </td>
+            <td style="text-align: center">
+                <a href="/Product/DetailProduct/@item.Id" title="Detail Product">Detail</a>
+            </td>
+            <td style="text-align: center">
+                <a href="/Product/DeleteProduct/@item.Id" title="Delete Product">Delete</a>
+            </td>
+
+        </tr>
+    }
+
+</table>
